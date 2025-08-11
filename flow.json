@@ -9,8 +9,8 @@
       "name": "Split Out",
       "type": "n8n-nodes-base.splitOut",
       "position": [
-        -272,
-        240
+        -384,
+        32
       ],
       "typeVersion": 1
     },
@@ -24,8 +24,8 @@
       "name": "2 Most Trending",
       "type": "n8n-nodes-base.set",
       "position": [
-        -1536,
-        240
+        -1648,
+        32
       ],
       "typeVersion": 3.4
     },
@@ -37,8 +37,8 @@
       "name": "High search volume keywords",
       "type": "n8n-nodes-base.code",
       "position": [
-        -1312,
-        240
+        -1424,
+        32
       ],
       "typeVersion": 2
     },
@@ -74,7 +74,7 @@
             },
             {
               "name": "api_key",
-              "value": "{your api key}"
+              "value": "35f40bdb4aeeac6edb5898b0a827803693bf1b07e6be7533d52b5ac484817196"
             }
           ]
         },
@@ -84,8 +84,8 @@
       "name": "Google Trends",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1760,
-        240
+        -1872,
+        32
       ],
       "typeVersion": 4.2
     },
@@ -97,8 +97,8 @@
       "name": "Wait",
       "type": "n8n-nodes-base.wait",
       "position": [
-        -496,
-        240
+        -608,
+        32
       ],
       "webhookId": "[GENERATED_WEBHOOK_ID]",
       "typeVersion": 1.1
@@ -111,8 +111,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        -1328,
-        592
+        -1440,
+        384
       ],
       "id": "629f7432-f48f-40fc-abd8-776415ccd8a7",
       "name": "Split Out1"
@@ -169,8 +169,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        -1136,
-        592
+        -1248,
+        384
       ],
       "id": "2afa698a-d864-4aec-8fe5-2cafa01a87ee",
       "name": "Append row in sheet",
@@ -202,8 +202,8 @@
       "name": "Research Topic- Perplexity",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -720,
-        240
+        -832,
+        32
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -233,11 +233,12 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        -1088,
-        240
+        -1200,
+        32
       ],
       "id": "4afc1195-15dc-4062-b1ac-455ed224384b",
       "name": "Message a model",
+      "retryOnFail": true,
       "credentials": {
         "googlePalmApi": {
           "id": "Ed9MZgAALCHY76kc",
@@ -254,8 +255,8 @@
       "name": "Create Tweet",
       "type": "n8n-nodes-base.twitter",
       "position": [
-        256,
-        368
+        384,
+        256
       ],
       "typeVersion": 2,
       "credentials": {
@@ -268,15 +269,16 @@
     {
       "parameters": {
         "person": "Li-5hSSh8i",
-        "text": "={{ $json['choices[0].message.content'] }}",
+        "text": "={{ $(\"Split Out\").item.json['choices[0].message.content'] }}",
+        "shareMediaCategory": "IMAGE",
         "additionalFields": {}
       },
       "id": "70a4e0fd-c0e4-4dc0-bce9-0ed6a9622040",
       "name": "Create a post",
       "type": "n8n-nodes-base.linkedIn",
       "position": [
-        256,
-        48
+        400,
+        -208
       ],
       "typeVersion": 1,
       "credentials": {
@@ -307,7 +309,7 @@
       "typeVersion": 1,
       "position": [
         -64,
-        416
+        256
       ],
       "id": "5187b8bd-8cb3-4267-8155-7ce55082448f",
       "name": "Message a model1",
@@ -364,8 +366,8 @@
       "name": "Append or update row in sheet",
       "type": "n8n-nodes-base.googleSheets",
       "position": [
-        528,
-        256
+        656,
+        144
       ],
       "typeVersion": 4.5,
       "credentials": {
@@ -380,8 +382,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1968,
-        240
+        -2080,
+        32
       ],
       "id": "b5191bbd-6fcd-416a-90c2-7e21ac5a523f",
       "name": "When clicking ‘Execute workflow’"
@@ -394,8 +396,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1808,
-        144
+        -1920,
+        -64
       ],
       "typeVersion": 1,
       "id": "bb747c53-313a-4b2b-8292-e88b2d3c1151",
@@ -409,8 +411,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1360,
-        480
+        -1472,
+        272
       ],
       "typeVersion": 1,
       "id": "a78afe67-e91e-4d99-ac34-f7b371fae255",
@@ -424,8 +426,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1120,
-        144
+        -1232,
+        -64
       ],
       "typeVersion": 1,
       "id": "e515771f-3b8a-4222-94d9-7271e4b800e7",
@@ -439,8 +441,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -768,
-        144
+        -880,
+        -64
       ],
       "typeVersion": 1,
       "id": "c07382cb-a156-4ca2-ba9c-bee4a0f62580",
@@ -449,13 +451,13 @@
     {
       "parameters": {
         "content": "## Post on social media",
-        "height": 576,
-        "width": 208
+        "height": 704,
+        "width": 256
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        208,
-        -48
+        336,
+        -288
       ],
       "typeVersion": 1,
       "id": "395d94e9-7f83-43c4-aefc-10ccd759056b",
@@ -470,11 +472,85 @@
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -80,
-        320
+        160
       ],
       "typeVersion": 1,
       "id": "df57314a-a405-4905-82a0-08c621dfb3e4",
       "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.0-flash-exp-image-generation",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.0-flash-exp-image-generation"
+        },
+        "prompt": "={{ $json.content.parts[0].text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        144,
+        -208
+      ],
+      "id": "f0f3fbb0-9377-4d39-886a-9303549f0eea",
+      "name": "Generate an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Ed9MZgAALCHY76kc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-pro",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-pro"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Role & Goal: You are an expert in creating professional, minimalistic, and LinkedIn-appropriate visuals. Your task is to design a simple yet eye-catching image that directly supports the meaning and tone of the given LinkedIn post. The visual must convey the message clearly without being cluttered.\n\nInput Text:\n{{ $json['choices[0].message.content'] }}\n\nRequirements:\n\nVisual Style:\n\nProfessional and minimalistic (clean lines, ample white space, simple color palette).\n\nModern flat or semi-flat illustration style, or minimal photo-based design.\n\nAvoid busy or distracting elements.\nAlso just give the output no extra text no pleasing words anything just the prompt that is to be used\nRelevance to Post:\n\nIdentify the core theme, idea, or emotion from the text.\n\nDepict symbols, objects, or simple metaphors that represent the message.\n\nEnsure any characters, objects, or charts are directly tied to the topic.\n\nColor & Composition:\n\nUse a neutral or brand-appropriate background.\n\nLimit to 2–3 primary colors and 1–2 accent colors.\n\nKeep elements balanced, with central focus on the key idea.\n\nText on Image (if needed):\n\nShort, impactful words from the post (max 6–8 words).\n\nUse large, clean sans-serif fonts.\n\nMaintain high contrast for readability.\n\nFormat & Output:\n\nAspect Ratio: 1:1 (square) or 4:5 (portrait) for LinkedIn feed optimization.\n\nHigh resolution (at least 1080px width).\n\nPNG or JPG format.\n\nCreative Direction Examples:\n\nIf the post is about growth → simple upward arrow, sprouting plant, or minimal bar chart.\n\nIf the post is about teamwork → 2–4 abstract human figures connecting shapes.\n\nIf the post is about a milestone → a trophy, target, or symbolic number display.\n\nFinal Note: Keep it elegant, easy to understand at a glance, and aligned with LinkedIn’s professional tone."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -208
+      ],
+      "id": "e2d95876-ef8e-41f9-b02a-21c881b29bc3",
+      "name": "Message a model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Ed9MZgAALCHY76kc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Image generation for linkedIn post",
+        "height": 304,
+        "width": 464
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -176,
+        -304
+      ],
+      "typeVersion": 1,
+      "id": "09d3321e-4cbf-4e08-904f-31d808160ea7",
+      "name": "Sticky Note6"
     }
   ],
   "connections": {
@@ -482,12 +558,12 @@
       "main": [
         [
           {
-            "node": "Create a post",
+            "node": "Message a model1",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Message a model1",
+            "node": "Message a model2",
             "type": "main",
             "index": 0
           }
@@ -608,6 +684,28 @@
         [
           {
             "node": "Google Trends",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model2": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
             "type": "main",
             "index": 0
           }
