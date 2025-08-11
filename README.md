@@ -41,7 +41,8 @@ This project is an **n8n automation** that fetches trending topics, researches t
 ---
 
 ## 📸 Workflow Preview
-<img width="1557" height="454" alt="image" src="https://github.com/user-attachments/assets/601de255-e2b9-43b7-a425-4ab05c28641a" />
+<img width="1382" height="480" alt="image" src="https://github.com/user-attachments/assets/56f923ca-9c5f-4f40-bea7-6a9097976045" />
+
 
 
 ---
